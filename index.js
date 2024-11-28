@@ -10,10 +10,14 @@ app.use(express.json());
 
 async function startServer() {
   try {
-    //mongoose.connect();
+    await mongoose.connect(process.env.MONGODB_URI);
+
+    console.log("Connected to Mongodb!");
 
     app.listen(3000, () => {
-      console.log("Server is running on port 3000");
+      console.log(
+        "Server is running on http://localhost:3000/transaction/post"
+      );
     });
   } catch (error) {
     throw new Error(error);
