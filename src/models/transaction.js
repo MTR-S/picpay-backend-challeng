@@ -9,12 +9,12 @@ const transactionSchema = new Schema({
   },
 
   payer: {
-    type: Number,
+    type: mongoose.ObjectId,
     require: true,
   },
 
   payee: {
-    type: Number,
+    type: mongoose.ObjectId,
     require: true,
   },
 });
